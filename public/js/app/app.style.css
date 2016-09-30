@@ -13,3 +13,12 @@
 .config a {
     margin-left: 5px;
 }
+.header {
+    margin-bottom: 30px;
+}
+ul { 
+    text-align: center;
+}
+li {
+    display: inline-block;
+}
