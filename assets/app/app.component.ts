@@ -9,7 +9,7 @@ import { AuthComponent } from './auth/auth.component';
     selector: 'my-app',
     templateUrl: './js/app/app.template.html',
     styleUrls: ['./js/app/app.style.css'],
-    directives: [ ROUTER_DIRECTIVES, HeaderComponent, AuthComponent, MessagesComponent]
+    directives: [ ROUTER_DIRECTIVES, HeaderComponent ]
 })
 
 @Routes([
