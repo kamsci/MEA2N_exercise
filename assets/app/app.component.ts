@@ -7,20 +7,14 @@ import { AuthComponent } from './auth/auth.component';
 
 @Component({
     selector: 'my-app',
-    template: `
-        <div class="container">
-            <my-header></my-header>
-            <my-auth></my-auth>
-            <my-messages></my-messages>
-        </div>
-    `,
+    templateUrl: './js/app/app.template.html',
     styleUrls: ['./js/app/app.style.css'],
     directives: [ ROUTER_DIRECTIVES, HeaderComponent, AuthComponent, MessagesComponent]
 })
 
 @Routes([
-    { path: '/', component: AuthComponent },
-    { path: '/auth', component: MessagesComponent }
+    { path: '/auth', component: AuthComponent },
+    { path: '/', component: MessagesComponent }
 ])
 export class AppComponent {
 
