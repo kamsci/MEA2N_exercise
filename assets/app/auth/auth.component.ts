@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
 import { Routes, ROUTER_DIRECTIVES } from '@angular/router';
 
-import { SignupComponent } from './signup.componenet';
-import { LoginComponent } from './login.componenet';
-import { LogoutComponent } from './logout.componenet';
+import { SignupComponent } from './signup.component';
+import { LoginComponent } from './login.component';
+import { LogoutComponent } from './logout.component';
 
 @Component({
     selector: 'my-auth',
