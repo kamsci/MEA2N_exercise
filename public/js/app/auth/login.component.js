@@ -17,7 +17,7 @@ var LoginComponent = (function () {
     LoginComponent = __decorate([
         core_1.Component({
             selector: 'my-login',
-            template: "\n        <section class=\"col-sm-8 col-sm-offset-2>\n            <button class=\"btn\" (click)=\"onLogin()\">Login</button>\n        </section> ",
+            template: "\n        <section class=\"col-sm-8 col-sm-offset-2\">\n            <button class=\"btn\" (click)=\"onLogin()\">Login</button>\n        </section> ",
             styleUrls: ['./js/app/app.style.css']
         }), 
         __metadata('design:paramtypes', [])
@@ -26,4 +26,4 @@ var LoginComponent = (function () {
 }());
 exports.LoginComponent = LoginComponent;
 
-//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImF1dGgvbG9naW4uY29tcG9uZW50LnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7Ozs7Ozs7Ozs7QUFBQSxxQkFBMEIsZUFBZSxDQUFDLENBQUE7QUFVMUM7SUFBQTtJQUlBLENBQUM7SUFIRyxnQ0FBTyxHQUFQO0lBRUEsQ0FBQztJQVhMO1FBQUMsZ0JBQVMsQ0FBQztZQUNQLFFBQVEsRUFBRSxVQUFVO1lBQ3BCLFFBQVEsRUFBRSxtSkFHTTtZQUNoQixTQUFTLEVBQUUsQ0FBQyx3QkFBd0IsQ0FBQztTQUN4QyxDQUFDOztzQkFBQTtJQUtGLHFCQUFDO0FBQUQsQ0FKQSxBQUlDLElBQUE7QUFKWSxzQkFBYyxpQkFJMUIsQ0FBQSIsImZpbGUiOiJhdXRoL2xvZ2luLmNvbXBvbmVudC5qcyIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCB7IENvbXBvbmVudCB9IGZyb20gJ0Bhbmd1bGFyL2NvcmUnO1xuXG5AQ29tcG9uZW50KHtcbiAgICBzZWxlY3RvcjogJ215LWxvZ2luJyxcbiAgICB0ZW1wbGF0ZTogYFxuICAgICAgICA8c2VjdGlvbiBjbGFzcz1cImNvbC1zbS04IGNvbC1zbS1vZmZzZXQtMj5cbiAgICAgICAgICAgIDxidXR0b24gY2xhc3M9XCJidG5cIiAoY2xpY2spPVwib25Mb2dpbigpXCI+TG9naW48L2J1dHRvbj5cbiAgICAgICAgPC9zZWN0aW9uPiBgLFxuICAgIHN0eWxlVXJsczogWycuL2pzL2FwcC9hcHAuc3R5bGUuY3NzJ11cbn0pXG5leHBvcnQgY2xhc3MgTG9naW5Db21wb25lbnQge1xuICAgIG9uTG9naW4gKCl7XG5cbiAgICB9XG59Il0sInNvdXJjZVJvb3QiOiIvc291cmNlLyJ9
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImF1dGgvbG9naW4uY29tcG9uZW50LnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7Ozs7Ozs7Ozs7QUFBQSxxQkFBMEIsZUFBZSxDQUFDLENBQUE7QUFVMUM7SUFBQTtJQUlBLENBQUM7SUFIRyxnQ0FBTyxHQUFQO0lBRUEsQ0FBQztJQVhMO1FBQUMsZ0JBQVMsQ0FBQztZQUNQLFFBQVEsRUFBRSxVQUFVO1lBQ3BCLFFBQVEsRUFBRSxxSkFHTTtZQUNoQixTQUFTLEVBQUUsQ0FBQyx3QkFBd0IsQ0FBQztTQUN4QyxDQUFDOztzQkFBQTtJQUtGLHFCQUFDO0FBQUQsQ0FKQSxBQUlDLElBQUE7QUFKWSxzQkFBYyxpQkFJMUIsQ0FBQSIsImZpbGUiOiJhdXRoL2xvZ2luLmNvbXBvbmVudC5qcyIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCB7IENvbXBvbmVudCB9IGZyb20gJ0Bhbmd1bGFyL2NvcmUnO1xuXG5AQ29tcG9uZW50KHtcbiAgICBzZWxlY3RvcjogJ215LWxvZ2luJyxcbiAgICB0ZW1wbGF0ZTogYFxuICAgICAgICA8c2VjdGlvbiBjbGFzcz1cImNvbC1zbS04IGNvbC1zbS1vZmZzZXQtMlwiPlxuICAgICAgICAgICAgPGJ1dHRvbiBjbGFzcz1cImJ0blwiIChjbGljayk9XCJvbkxvZ2luKClcIj5Mb2dpbjwvYnV0dG9uPlxuICAgICAgICA8L3NlY3Rpb24+IGAsXG4gICAgc3R5bGVVcmxzOiBbJy4vanMvYXBwL2FwcC5zdHlsZS5jc3MnXVxufSlcbmV4cG9ydCBjbGFzcyBMb2dpbkNvbXBvbmVudCB7XG4gICAgb25Mb2dpbiAoKXtcblxuICAgIH1cbn0iXSwic291cmNlUm9vdCI6Ii9zb3VyY2UvIn0=

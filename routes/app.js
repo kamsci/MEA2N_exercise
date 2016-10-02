@@ -5,6 +5,14 @@ var User = require('../models/user');
 router.get('/', function(req, res, next) {
     res.render('index');
 })
+
+
+module.exports = router;
+
+
+
+// EXPRESS PRACTICE
+
 // router.get('/', function (req, res, next) {
 //     var email = '';
 //     User.findOne({}, function (err, doc) {
@@ -18,14 +26,6 @@ router.get('/', function(req, res, next) {
 //     });
 
 // });
-
-module.exports = router;
-
-
-
-// EXPRESS PRACTICE
-
-
 // router.post('/', function (req, res, next) {
 //     var email = req.body.email;
 //     var user = new User({

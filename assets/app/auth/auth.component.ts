@@ -7,10 +7,9 @@ import { LogoutComponent } from './logout.component';
 
 @Component({
     selector: 'my-auth',
-    template: `
-        <h2>Auth</h2>
-    `,
-    styleUrls: ['./js/app/app.style.css']
+    templateUrl: './js/app/auth/auth.template.html',
+    styleUrls: ['./js/app/app.style.css'],
+    directives: [ ROUTER_DIRECTIVES ]
 })
 
 @Routes([

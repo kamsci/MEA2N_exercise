@@ -15,18 +15,19 @@ import { Message } from './message';
 })
 export class MessageListComponent implements OnInit{
 
-        constructor(private _messageService: MessageService) {
-            console.log('Messsage List constructor')
-        }
+        constructor(private _messageService: MessageService) {}
 
         messages: Message[];
 
-        // console.log("M" + messages)
-
         ngOnInit() {
             // Could have run in constructor, but this is better practice for heavy tasks
-            this.messages = this._messageService.getAllMessages();
+            this._messageService.getAllMessages()
+                .subscribe(
+                    messages => {
+                        this.messages = messages;
+                        this._messageService.messages = messages;
+                    }
+                );
              console.log("Init", this.messages);
         }
-
 }
