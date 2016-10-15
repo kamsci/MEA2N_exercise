@@ -17,6 +17,10 @@ export class MessageComponent {
         this._messageService.editMessage(this.message);
     }
     delete() { 
-        this._messageService.deleteMessage(this.message);
+        this._messageService.deleteMessage(this.message)
+        .subscribe(
+            data => console.log(data),
+            error => console.log(error)
+        )
     }
 }

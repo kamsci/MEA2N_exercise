@@ -18,13 +18,11 @@ export class MessageService {
         // this.messages.push(message);
         // console.log(this.messages);
         const body = JSON.stringify(message);
-        console.log("body", body);
+        console.log("Add msg body", body);
         const headers = new Headers({'Content-type': 'application/json'});
         return this._http.post('http://localhost:3000/message', body, {headers: headers})
         .map(response => {
             const data = response.json().result;
-            console.log("add", data)
-            console.log("body2", body);
             let message = new Message(data.content, data._id, 'Dummy', null);
             return message;
         })
@@ -35,9 +33,7 @@ export class MessageService {
         // return this.messages;
         return this._http.get('http://localhost:3000/message')
             .map(response => {
-                console.log("response", response);
                 const data = response.json().result;
-                console.log("data", data)
                 let msgArray: any[] = [];
                 for(var i = 0; i < data.length; i++) {
                     let message = new Message(data[i].content, data[i]._id, "Dummy", null);
@@ -53,7 +49,19 @@ export class MessageService {
         // this.messages[this.messages.indexOf(message)] = new Message('Edited Msg', null, 'Dummy');
     }
 
+    updateMessage(message: Message) {
+        const body = JSON.stringify(message);
+        const headers = new Headers({'Content-type': 'application/json'});
+        // send to patch route with messageID
+        return this._http.patch('http://localhost:3000/message/' + message.messageId, body, {headers: headers})
+            .map(response => response.json())
+            .catch(error => Observable.throw(error.json()));
+    }
+
     deleteMessage(message:Message) {
         this.messages.splice(this.messages.indexOf(message), 1)
+        return this._http.delete('http://localhost:3000/message/' + message.messageId)
+            .map(response => response.json())
+            .catch(error => Observable.throw(error.json()));
     }
 } 

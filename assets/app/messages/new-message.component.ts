@@ -26,6 +26,11 @@ export class NewMessageComponent implements OnInit {
         if(this.message) {
             // Edit
             this.message.content = form.content;
+            this._messageService.updateMessage(this.message)
+                .subscribe(
+                    data => console.log(data),
+                    error => console.log(error)
+                )
             this.message = null;
         } else {
             const message: Message = new Message(form.content, null, 'Platapus');
