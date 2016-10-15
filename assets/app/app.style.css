@@ -22,3 +22,16 @@ ul {
 li {
     display: inline-block;
 }
+.auth {
+    margin-top: 20px;
+}
+.router-link-active {
+    color: #555;
+    cursor: default;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-bottom: transparent; 
+}
+.ng-invalid.ng-touched {
+    border: 1px solid red;
+}

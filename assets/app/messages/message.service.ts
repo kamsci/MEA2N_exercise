@@ -1,6 +1,6 @@
 import { Message } from './message'
 import { Http, Headers } from '@angular/http';
-import { Injectable } from '@angular/core';
+import { Injectable, EventEmitter} from '@angular/core';
 import 'rxjs/Rx';
 import { Observable } from 'rxjs/Observable';
 
@@ -11,6 +11,8 @@ export class MessageService {
     messages: Message[];
     
     constructor(private _http: Http) {};
+
+    messageEditRequest = new EventEmitter<Message>();
 
     addMessage(message:Message) {
         // this.messages.push(message);
@@ -38,7 +40,7 @@ export class MessageService {
                 console.log("data", data)
                 let msgArray: any[] = [];
                 for(var i = 0; i < data.length; i++) {
-                    let message = new Message(data[i].content, data[i]._id, data[i].username, null);
+                    let message = new Message(data[i].content, data[i]._id, "Dummy", null);
                     msgArray.push(message);
                 }
                 return msgArray;
@@ -47,7 +49,8 @@ export class MessageService {
     }
 
     editMessage(message: Message) {
-        this.messages[this.messages.indexOf(message)] = new Message('Edited Msg', null, 'Dummy');
+        this.messageEditRequest.emit(message);
+        // this.messages[this.messages.indexOf(message)] = new Message('Edited Msg', null, 'Dummy');
     }
 
     deleteMessage(message:Message) {

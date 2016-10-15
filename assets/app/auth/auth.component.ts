@@ -13,7 +13,7 @@ import { LogoutComponent } from './logout.component';
 })
 
 @Routes([
-    { path: '/signup', component: SignupComponent },
+    { path: '/signup', component: SignupComponent},
     { path: '/login', component: LoginComponent },
     { path: '/logout', component: LogoutComponent }
 ])

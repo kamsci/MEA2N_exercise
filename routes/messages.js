@@ -3,8 +3,8 @@ var router = express.Router();
 var Message = require('../models/message');
 
 router.get('/', function(req, res, next) {
-    console.log("/messages connected")
     Message.find()
+    // execute all queries appended before this .exec method
     .exec(function(err, data) {
         if (err) {
             return res.status(404).json({
