@@ -26,7 +26,6 @@ export class SignupComponent implements OnInit{
     }
     onSignup (){
         const user = new User(this.myForm.value.email, this.myForm.value.password, this.myForm.value.firstName, this.myForm.value.lastName);
-        console.log("user", user);
         this._authService.signup(user)
             .subscribe(
                 // remove console log for production! b/c of pw

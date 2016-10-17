@@ -1,5 +1,5 @@
 <section class="col-sm-10 col-sm-offset-1 auth">
-    <form [ngFormModel]="myForm" (ngSubmit)="onSignup()">
+    <form [ngFormModel]="myForm" (ngSubmit)="onLogin()">
         <div class="form-group">
             <input [ngFormControl]="myForm.find('email')" type="text" class="form-control" id="email" placeholder="Email" #input>
         </div>

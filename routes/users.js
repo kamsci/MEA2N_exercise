@@ -6,7 +6,6 @@ var jwt = require('jsonwebtoken');
 var User = require('../models/user');
 
 router.post('/', function(req, res, next) {
-    console.log("Route Hit")
     // NOTE: real app should submit password encrypted right away!!
     var user = new User({
         firstName: req.body.firstName,
@@ -14,7 +13,6 @@ router.post('/', function(req, res, next) {
         password: passwordHash.generate(req.body.password),
         email: req.body.email
     });
-    console.log("user", user)
     user.save(function(err, result) {
         if (err) {
             return res.status(404).json({
@@ -29,8 +27,8 @@ router.post('/', function(req, res, next) {
     })
 })
 
-routers.post('/login', function(req, res, next) {
-    User.findOne({email: req.body.email}, function(err, data) {
+router.post('/login', function(req, res, next) {
+    User.findOne({ email: req.body.email }, function(err, data) {
         if (err) {
             return res.status(404).json({
                 title: "Error logging in",
@@ -39,17 +37,22 @@ routers.post('/login', function(req, res, next) {
         }
         if(!data) {
             return res.status(404).json({
-                title: "Could not login",
-                error: {message: "Could not login"}
+                title: "Login Success",
+                error: {message: "Login Success"}
             });
         }
         if(!passwordHash.verify(req.body.password, data.password)){
             return res.status(404).json({
-                title: "Could not sign in",
+                title: "Invalid password",
                 error: {message: "Invalid password"}
             });
         }
-        
+        var token = jwt.sign({ user: data }, 'supers1cre3tke7$ndstuff', { expiresIn: 7200 });
+        res.status(200).json({
+            message: "Success",
+            token: token,
+            userId: data._id
+        })
     });
 })
 
