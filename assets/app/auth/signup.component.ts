@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, ControlGroup, Validators, Control } from '@angular/common';
+import { AuthService } from './auth.service';
+import { User } from './user';
 
 @Component({
     selector: 'my-signup',
@@ -9,7 +11,7 @@ import { FormBuilder, ControlGroup, Validators, Control } from '@angular/common'
 export class SignupComponent implements OnInit{
     myForm: ControlGroup;
 
-    constructor(private _fb:FormBuilder) {}
+    constructor(private _fb:FormBuilder, private _authService: AuthService) {}
 
     ngOnInit () {
         this.myForm = this._fb.group({
@@ -23,7 +25,14 @@ export class SignupComponent implements OnInit{
         })
     }
     onSignup (){
-        console.log(this.myForm.value);
+        const user = new User(this.myForm.value.email, this.myForm.value.password, this.myForm.value.firstName, this.myForm.value.lastName);
+        console.log("user", user);
+        this._authService.signup(user)
+            .subscribe(
+                // remove console log for production! b/c of pw
+                data => console.log(data),
+                error => console.log(error)
+            )
     }
 
     private isEmail(control: Control): {[s:string]: boolean} {
